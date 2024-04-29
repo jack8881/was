@@ -1,0 +1,35 @@
+# To create a user for this webapp, run the following from PG's SQL console:
+#
+#   CREATE USER peed WITH PASSWORD 'root' CREATEDB;
+#
+# (Update the credentials in both the above SQL query and the bellow settings appropriately.)
+
+development:
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  database: peed_development
+  pool: 50
+  username: peed
+  password: root
+
+test: &test
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  database: peed_test
+  pool: 50
+  username: peed
+  password: root
+
+production:
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  database: peed_production
+  pool: 50
+  username: peed
+  password: root
+
+cucumber:
+  <<: *test
